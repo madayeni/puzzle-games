@@ -11,34 +11,34 @@ const sizes = {
   six: 6,
 };
 
-let size, per;
-let board = {};
+let size, per, board, moves;
 
-const swap = (e) => {
-  const cell = parseInt(e.target.innerHTML);
+const swap = (el) => {
+  const cell = parseInt(el.innerHTML);
+  moves.push(cell);
   const { row, col } = board[cell];
   board[cell].row = board[0].row;
   board[cell].col = board[0].col;
   board[0].row = row;
   board[0].col = col;
-  updateUI(e);
+  updateUI(el);
 };
 
-const move = (e) => {
-  const val = parseInt(e.target.innerHTML);
+const move = (el) => {
+  const val = parseInt(el.innerHTML);
   if (board[val].row === board[0].row) {
     if (
       board[val].col === board[0].col + 1 ||
       board[val].col === board[0].col - 1
     ) {
-      swap(e);
+      swap(el);
     }
   } else if (board[val].col === board[0].col) {
     if (
       board[val].row === board[0].row + 1 ||
       board[val].row === board[0].row - 1
     ) {
-      swap(e);
+      swap(el);
     }
   } else {
     return;
@@ -55,8 +55,6 @@ const initBoard = () => {
   board[0] = { row: size - 1, col: size - 1 };
 };
 const initUI = () => {
-  size = sizes[sizeSel.value];
-  per = 100 / size;
   boardGame.innerHTML = "";
   for (let i = 0; i < size * size - 1; i++) {
     const btn = document.createElement("button");
@@ -64,31 +62,58 @@ const initUI = () => {
     const row = Math.floor(i / size);
     const col = Math.floor(i % size);
     btn.classList.add("cell");
+    btn.id = `cell-${i + 1}`;
     btn.style.width = btn.style.height = `${per}%`;
     btn.style.top = `${row * per}%`;
     btn.style.left = `${col * per}%`;
     boardGame.appendChild(btn);
-    btn.addEventListener("click", move);
+    btn.addEventListener("click", (e) => {
+      move(e.target);
+    });
   }
 };
-initUI();
-initBoard();
 
-const updateUI = (e) => {
-  e.target.style.top = `${board[parseInt(e.target.innerHTML)].row * per}%`;
-  e.target.style.left = `${board[parseInt(e.target.innerHTML)].col * per}%`;
+const initParams = () => {
+  size = sizes[sizeSel.value];
+  per = 100 / size;
+  board = {};
+  moves = [];
 };
 
-const adjustSize = (e) => {
-  size = sizes[e.target.value];
-  initUI();
-  initBoard();
+const updateUI = (el) => {
+  el.style.top = `${board[parseInt(el.innerHTML)].row * per}%`;
+  el.style.left = `${board[parseInt(el.innerHTML)].col * per}%`;
+};
+
+const adjustSize = () => {
+  reset();
 };
 
 const reset = () => {
+  initParams();
   initUI();
   initBoard();
 };
+
+const solve = () => {
+  const temp = [...moves];
+  while (temp.length > 0) {
+    const cell = temp.pop();
+    const el = document.getElementById(`cell-${cell}`);
+    console.log(el.innerHTML);
+    swap(el);
+  }
+  moves = [];
+};
+
+const shuffle = () => {
+  for (let i = 0; i < 1000; i++) {
+    const r = Math.floor(Math.random() * (size * size - 1));
+    move(boardGame.children[r]);
+  }
+};
+
+reset();
 
 sizeSel.addEventListener("change", adjustSize);
 resetBtn.addEventListener("click", reset);

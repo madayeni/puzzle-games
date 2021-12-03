@@ -74,8 +74,13 @@ body {
   grid-area: title;
 }
 
+.navbar .flex {
+  flex-wrap: wrap;
+}
+
 .navbar {
-  height: 60px;
+  min-height: 60px;
+  padding: 20px;
   background-color: darkorchid;
 }
 
@@ -122,7 +127,7 @@ select {
   font-family: inherit;
   border: none;
   outline: none;
-  background-color: rgb(200, 205, 221);
+  background-color: rgb(143, 159, 212);
   margin: 0 10px;
   cursor: pointer;
 }
@@ -137,8 +142,8 @@ select:hover,
 }
 
 .board-game {
-  width: 400px;
-  /* max-width: 100%; */
+  width: 100%;
+  max-width: 400px;
   height: 400px;
   background-color: rgb(50, 91, 107);
   position: relative;
