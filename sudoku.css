@@ -1,166 +1,22 @@
-@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Balsamiq+Sans&display=swap");
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background-color: cornflowerblue;
-  font-family: "Balsamiq Sans", cursive;
-  color: whitesmoke;
-}
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.title {
-  text-align: center;
-  letter-spacing: 2px;
-  margin: 30px auto;
-  font-family: "Architects Daughter", cursive;
-}
-
-.games {
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-
-.game {
-  width: 500px;
-  max-width: 100%;
-  min-height: 300px;
-  background-color: white;
-  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
-  margin: 20px 10px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  display: grid;
-  grid-template-areas:
-    "img1 img2"
-    "title title";
-  grid-template-rows: 75% 25%;
-}
-
-.game:hover {
-  transform: translateY(-10px);
-}
-
-.image-container {
-  background-color: rgba(0, 0, 0, 0.2);
-  width: 100%;
-  height: 100%;
-}
-
-.image-container:first-child {
-  grid-area: img1;
-}
-
-.image-container:last-child {
-  grid-area: img2;
-}
-
-.game-name {
-  width: 100%;
-  height: 100%;
-  background-color: rgb(133, 136, 184, 0.6);
-  grid-area: title;
-}
-
-.navbar .flex {
-  flex-wrap: wrap;
-}
-
-.navbar {
-  min-height: 60px;
-  padding: 20px;
-  background-color: darkorchid;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-  transition: all 0.3s ease;
-}
-
-a:hover {
-  transform: translateX(10px);
-}
-
-.flex {
-  display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-}
-
-.flex.flex-b {
-  justify-content: space-between;
-}
-
-.size h3 {
-  font-size: 14px;
-}
-
-select {
-  background-color: rgb(200, 205, 221);
-  padding: 8px 18px;
-  border: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  outline: none;
-  cursor: pointer;
-  font-family: inherit;
-  margin: 0 20px;
-}
-
-.btn {
-  padding: 8px 18px;
-  font-family: inherit;
-  border: none;
-  outline: none;
-  background-color: rgb(143, 159, 212);
-  margin: 0 10px;
-  cursor: pointer;
-}
-
-select:hover,
-.btn:hover {
-  box-shadow: 0 5px 25px rgba(160, 216, 218, 0.7);
-}
-
 .main {
   height: calc(100vh - 60px);
 }
 
 .board-game {
-  width: 100%;
-  max-width: 400px;
-  height: 400px;
-  background-color: rgb(50, 91, 107);
-  position: relative;
+  width: 450px;
+  height: 450px;
+  background-color: ivory;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .cell {
-  padding: 8px 18px;
-  font-family: inherit;
-  border: 2px solid royalblue;
-  outline: none;
-  background-color: rgb(200, 205, 221);
-  cursor: pointer;
+  border: 1px orange solid;
+  height: 50px;
+  width: 50px;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 25px;
-  position: absolute;
-  transition: all 0.3s ease;
-}
-
-.cell:hover {
-  opacity: 0.8;
 }

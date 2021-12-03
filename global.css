@@ -34,3 +34,45 @@ a {
 .flex.flex-b {
   justify-content: space-between;
 }
+
+.navbar .flex {
+  flex-wrap: wrap;
+}
+
+.navbar {
+  min-height: 60px;
+  padding: 20px;
+  background-color: darkorchid;
+}
+
+.toolbar h3 {
+  font-size: 14px;
+}
+
+select {
+  background-color: rgb(200, 205, 221);
+  padding: 8px 18px;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+  margin: 0 20px;
+}
+
+.btn {
+  padding: 8px 18px;
+  font-family: inherit;
+  border: none;
+  outline: none;
+  background-color: rgb(143, 159, 212);
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+select:hover,
+.btn:hover {
+  box-shadow: 0 5px 25px rgba(160, 216, 218, 0.7);
+}

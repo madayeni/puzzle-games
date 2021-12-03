@@ -1,72 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Balsamiq+Sans&display=swap");
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background-color: cornflowerblue;
-  font-family: "Balsamiq Sans", cursive;
-  color: whitesmoke;
-}
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.navbar .flex {
-  flex-wrap: wrap;
-}
-
-.navbar {
-  min-height: 60px;
-  padding: 20px;
-  background-color: darkorchid;
-}
-
 a {
   transition: all 0.3s ease;
 }
 
 a:hover {
   transform: translateX(10px);
-}
-
-.size h3 {
-  font-size: 14px;
-}
-
-select {
-  background-color: rgb(200, 205, 221);
-  padding: 8px 18px;
-  border: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  outline: none;
-  cursor: pointer;
-  font-family: inherit;
-  margin: 0 20px;
-}
-
-.btn {
-  padding: 8px 18px;
-  font-family: inherit;
-  border: none;
-  outline: none;
-  background-color: rgb(143, 159, 212);
-  margin: 0 10px;
-  cursor: pointer;
-}
-
-select:hover,
-.btn:hover {
-  box-shadow: 0 5px 25px rgba(160, 216, 218, 0.7);
 }
 
 .main {
