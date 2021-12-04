@@ -20,3 +20,11 @@
   justify-content: center;
   font-size: 25px;
 }
+
+.cell.solved {
+  background-color: goldenrod;
+}
+
+.cell.try {
+  background-color: yellowgreen;
+}
