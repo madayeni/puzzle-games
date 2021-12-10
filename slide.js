@@ -95,21 +95,31 @@ const reset = () => {
   initBoard();
 };
 
-const solve = () => {
+const pause = (val) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, val);
+  });
+};
+
+const solve = async () => {
   const temp = [...moves];
   while (temp.length > 0) {
     const cell = temp.pop();
     const el = document.getElementById(`cell-${cell}`);
     console.log(el.innerHTML);
     swap(el);
+    await pause(100);
   }
   moves = [];
 };
 
-const shuffle = () => {
+const shuffle = async () => {
   for (let i = 0; i < 1000; i++) {
     const r = Math.floor(Math.random() * (size * size - 1));
     move(boardGame.children[r]);
+    await pause(1);
   }
 };
 
