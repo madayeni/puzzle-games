@@ -2,6 +2,7 @@ const boardGame = document.getElementById("board-game");
 const solveBtn = document.getElementById("solve");
 const optionsDOM = document.getElementById("options");
 const delayEl = document.getElementById("delay");
+const resetBtn = document.getElementById("reset");
 
 const size = 9;
 const options = [...Array(size).keys()].map((_, i) => i + 1);
@@ -95,7 +96,6 @@ function dragDrop(e) {
   e.target.innerHTML = curNum;
   e.target.classList.add("put");
   e.target.addEventListener("dblclick", deleteCell);
-  console.log(board[0]);
 }
 
 const safeToPut = (board, row, col, num) => {
@@ -183,3 +183,4 @@ initUI();
 solve();
 solveBtn.addEventListener("click", solveForUser);
 delayEl.addEventListener("change", changeDelay);
+resetBtn.addEventListener("click", () => location.reload());
