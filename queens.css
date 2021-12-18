@@ -1,0 +1,31 @@
+.main {
+  height: calc(100vh - 80px);
+}
+
+.board-game {
+  width: 450px;
+  height: 450px;
+  background-color: ivory;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cell {
+  border: 1px orange solid;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.cell img {
+  width: 90%;
+  height: 90%;
+}
+
+.cell:hover {
+  background: gray;
+  opacity: 0.2;
+}
