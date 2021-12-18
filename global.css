@@ -22,6 +22,11 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+  transform: translateX(10px);
 }
 
 .flex {
